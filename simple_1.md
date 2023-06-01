@@ -1,3 +1,5 @@
+PLEASE RUN
+
 # Very Simple Neural Network 1
 
 this code (`simple_1.py`) is a program to train a simple neural network.
@@ -8,28 +10,26 @@ And also this neural network takes 3 neurons as input and 1 neuron as outputs, a
 
 ## Data
 
-$$
-
+```math
 inputs = \begin{bmatrix}
             0 & 0 & 1 \\
             1 & 1 & 1 \\
             1 & 0 & 1 \\
             0 & 1 & 1
 
-        \end{bmatrix}
-$$
+        \end{bmatrix}$$
+```
 
-$$
+```math
 outputs = \begin{bmatrix}
         0 \\ 1 \\ 1 \\ 0
         \end{bmatrix}
 
-
-$$
+```
 
 imagine that input as a table, and you'll put the output beside that table
 
-$$
+```math
 \begin{bmatrix}
             0 & 0 & 1 \\
             1 & 1 & 1 \\
@@ -39,7 +39,7 @@ $$
         \end{bmatrix} = \begin{bmatrix}
         0 \\ 1 \\ 1 \\ 0
         \end{bmatrix}
-$$
+```
 
 ## Forward Propagation
 
@@ -54,16 +54,16 @@ sypnatic_weights = 2 * np.random.random((3,1)) - 1
 
 In order to calculate the output neuron, we need to have the sum of 3 inputs and 3 weights multiplication :
 
-| Programmatically           |                          Mathematically                          |
-| :------------------------- | :--------------------------------------------------------------: |
-| $$ input \times weights $$ |                 $$ Z = \sum\_{i=1}^{3}x_iw_i $$                  |
-| s                          | $ x_i = \text{input neurons} $ and $ w_i = \text{weight layer} $ |
+| Programmatically         |                         Mathematically                         |
+| :----------------------- | :------------------------------------------------------------: |
+| $$input \times weights$$ |                 $$Z = \sum\_{i=1}^{3}x_iw_i$$                  |
+| s                        | $x_i = \text{input neurons}$ <br/> $w_i = \text{weight layer}$ |
 
 <details open>
 <summary>Detailed Formula</summary>
 <br>
 
-$$
+```math
     Z =\begin{bmatrix}
             0 & 0 & 1 \\
             1 & 1 & 1 \\
@@ -86,13 +86,13 @@ $$
         1 \times -0.16595599 + 0 \times 0.44064899 + 1 \times -0.99977125 \\
         0 \times -0.16595599 + 1 \times 0.44064899 + 1 \times -0.99977125
         \end{bmatrix}
-$$
+```
 
 or the formula can be simplify to
 
-$$
+```math
 \Phi(x) = 1/{1 + e^{-\sum_{i=1}^{3}x_iw_i }}
-$$
+```
 
 </details>
 
@@ -102,9 +102,9 @@ $$
 
 Then we would calculate the activation function using sigmoid $ \Phi $
 
-$$
+```math
 \Phi(Z) = 1 / 1 + e^{-Z}
-$$
+```
 
 and that formula describes as the code in function sigmoid in line 3:
 
@@ -115,11 +115,9 @@ def sigmoid(x):
 
 ## Backward Propagation
 
-$$
+```math
 error \times input \times \Phi'(output)
-
-
-$$
+```
 
 ## Testing the NN
 
